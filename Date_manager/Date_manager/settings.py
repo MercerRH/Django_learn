@@ -80,7 +80,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Date_manager',  # 数据库名
-        'USER': '',  # 数据库登录用户名
+        'USER': 'root',  # 数据库登录用户名
         'PASSWORD': '',  # 数据库登录密码
         'HOST': 'localhost',  # 数据库服务器ip
         'PORT': '3306',  # 数据库端口

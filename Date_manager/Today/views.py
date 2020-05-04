@@ -8,3 +8,7 @@ def Today(request):
     context = {}
     context['all'] = Event.objects.all()
     return render(request, 'Today/today.html', context)
+
+
+def add(request):
+    return render(request, 'Today/add.html')

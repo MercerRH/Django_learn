@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5beb89f-1cd7-46ef-b07d-3a499877664c" name="Default Changelist" comment="" />
+    <list default="true" id="b5beb89f-1cd7-46ef-b07d-3a499877664c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Date_manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Date_manager/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Today/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Today/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Today/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Today/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Today/today.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Today/today.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +95,7 @@
       <workItem from="1588419371006" duration="1244000" />
       <workItem from="1588493036948" duration="1751000" />
       <workItem from="1588495943064" duration="1554000" />
+      <workItem from="1588559958063" duration="8420000" />
     </task>
     <task id="LOCAL-00001" summary="增加了测试git用的文件">
       <created>1588498069772</created>
@@ -108,7 +115,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
