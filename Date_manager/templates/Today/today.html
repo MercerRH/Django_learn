@@ -28,51 +28,84 @@
             transform: translate(-70%, -100%);
         }
     </style>
-    <script>
-        $(function () {
-            $('#add_event').click(function () {
-                $input_title = $('#input_title').val()
-                $input_content = $('#input_content').val()
-                window.location.href = "/today/add"
-            })
-        })
-    </script>
 </head>
 <body>
+    <!-- 顶部菜单条 -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="navbar-brand">日程</div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     </nav>
+
+    <!-- 显示模态框的按钮 -->
     <div id="button_area">
-        <button type="button" class="btn btn-primary text-nowrap" id="add_event">添加新的事件</button>
-
-        <input type="text" class="form-control" id="input_title">
-        <textarea class="form-control" id="input_content"></textarea>
-
+{#        <button type="button" class="btn btn-primary text-nowrap" id="add_event">添加新的事件</button>#}
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_event">添加行程</button>
     </div>
+
+    <!-- 显示表格内容  -->
     <div id="content">
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">日期</th>
+                    <th scope="col">起始日期时间</th>
+                    <th scope="col">截止日期时间</th>
                     <th scope="col">标题</th>
                     <th scope="col">内容</th>
-                    <th scope="col">是否删除</th>
+                    <th scope="col">是否结束</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    {% for i in all %}
-                        <th scop="row">{{ i.event_date }}</th>
+                {% for i in all %}
+                    <tr>
+                        <th>{{ i.start_time }}</th>
+                        <th>{{ i.end_time }}</th>
                         <th>{{ i }}</th>
                         <th>{{ i.content }}</th>
-                        <th>{{ i.is_delete }}</th>
-                    {% endfor %}
-                </tr>
+                        <th>{{ i.is_finished }}</th>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
+    </div>
+
+    <!-- 模态框  -->
+    <div class="modal fade" id="add_event" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="modal_title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal_title">行程详细</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="submit_all" method='post' action="/today/">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="input_title">标题</label>
+                            <input type="text" class="form-control" name="input_title">
+                        </div>
+                        <div class="form-group">
+                            <label for="input_content">内容</label>
+                            <textarea class="form-control" name="input_content"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="start_time">起始日期</label>
+                            <input type="datetime-local" name="start_time">
+                        </div>
+                        <div class="form-group">
+                            <label for="end_time">截止日期</label>
+                            <input type="datetime-local" name="end_time">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary" id="save_input_button">保存</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>
