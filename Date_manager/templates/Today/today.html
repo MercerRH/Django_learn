@@ -28,6 +28,31 @@
             transform: translate(-70%, -100%);
         }
     </style>
+
+    <script>
+        $(function () {
+            $('#save_input_button').click(function () {
+                $input_title = $('#input_title').val()
+                $input_content = $('#input_content').val()
+                $start_time = $('#start_time').val()
+                $end_time = $('#end_time').val()
+                $.ajax({
+                    'url': '/today/ajax_check/',
+                    'type': 'POST',
+                    'dataType': 'json',
+                    'data': {
+                        'input_title': $input_title,
+                        'input_content': $input_content,
+                        'start_time': $start_time,
+                        'end_time': $end_time,
+                    }
+                })
+                    .done(function () {
+                        window.location.href = '/today/'
+                    })
+            })
+        })
+    </script>
 </head>
 <body>
     <!-- 顶部菜单条 -->
@@ -80,30 +105,31 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form id="submit_all" method='post' action="/today/">
-                    <div class="modal-body">
+                <div class="modal-body">
+                    <!-- form id="submit_all" method='post' action="/today/" -->
+                    <form id="submit_all">
                         <div class="form-group">
                             <label for="input_title">标题</label>
-                            <input type="text" class="form-control" name="input_title">
+                            <input type="text" class="form-control" id="input_title">
                         </div>
                         <div class="form-group">
                             <label for="input_content">内容</label>
-                            <textarea class="form-control" name="input_content"></textarea>
+                            <textarea class="form-control" id="input_content"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="start_time">起始日期</label>
-                            <input type="datetime-local" name="start_time">
+                            <input type="datetime-local" id="start_time">
                         </div>
                         <div class="form-group">
                             <label for="end_time">截止日期</label>
-                            <input type="datetime-local" name="end_time">
+                            <input type="datetime-local" id="end_time">
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                        <button type="submit" class="btn btn-primary" id="save_input_button">保存</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="save_input_button">保存</button>
+                </div>
             </div>
         </div>
     </div>

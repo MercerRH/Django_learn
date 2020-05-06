@@ -1,10 +1,18 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 from Today.models import Event
 
 
 # Create your views here.
 
 def Today(request):
+
+    context = {}
+    context['all'] = Event.objects.all()
+    return render(request, 'Today/today.html', context)
+
+
+def ajax_check(request):
     # 获取返回的数据
     if request.method == "POST":  # 判断是否收到POST提交
         input_title = request.POST.get('input_title')
@@ -20,7 +28,5 @@ def Today(request):
         event.end_time = end_time
         event.save()
 
-    context = {}
-    context['all'] = Event.objects.all()
-    return render(request, 'Today/today.html', context)
+    return JsonResponse({})
 
