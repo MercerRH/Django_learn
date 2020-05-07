@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b5beb89f-1cd7-46ef-b07d-3a499877664c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Today/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Today/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Today/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Today/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Today/today.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Today/today.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,6 +97,7 @@
       <workItem from="1588671871215" duration="20000" />
       <workItem from="1588755266501" duration="2810000" />
       <workItem from="1588759331348" duration="1537000" />
+      <workItem from="1588833057417" duration="2444000" />
     </task>
     <task id="LOCAL-00001" summary="增加了测试git用的文件">
       <created>1588498069772</created>
