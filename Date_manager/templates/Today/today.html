@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 
     <style>
-        #content table{
+        #content{
             width: 80%;
+            height: 90%;
+            overflow: auto;
             position: fixed;
             top: 80px;
             left: 20%;
@@ -65,32 +67,33 @@
 
     <!-- 显示模态框的按钮 -->
     <div id="button_area">
-{#        <button type="button" class="btn btn-primary text-nowrap" id="add_event">添加新的事件</button>#}
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_event">添加行程</button>
     </div>
 
     <!-- 显示表格内容  -->
     <div id="content">
         <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">起始日期时间</th>
-                    <th scope="col">截止日期时间</th>
-                    <th scope="col">标题</th>
-                    <th scope="col">内容</th>
-                    <th scope="col">是否结束</th>
-                </tr>
+            <thead class="w-100">
+            <tr class="row mx-0">
+                <th class="col-3">起始日期时间</th>
+                <th class="col-3">截止日期时间</th>
+                <th class="col-2">标题</th>
+                <th class="col-2">内容</th>
+                <th class="col-1">是否结束</th>
+                <th class="col-1">功能</th>
+            </tr>
             </thead>
-            <tbody>
-                {% for i in all %}
-                    <tr>
-                        <th>{{ i.start_time }}</th>
-                        <th>{{ i.end_time }}</th>
-                        <th>{{ i }}</th>
-                        <th>{{ i.content }}</th>
-                        <th>{{ i.is_finished }}</th>
-                    </tr>
-                {% endfor %}
+            <tbody class="table table-hover">
+            {% for i in all %}
+                <tr class="row mx-0">
+                    <th class="col-3">{{ i.start_time }}</th>
+                    <th class="col-3">{{ i.end_time }}</th>
+                    <th class="col-2">{{ i }}</th>
+                    <th class="col-2">{{ i.content }}</th>
+                    <th class="col-1">{{ i.is_finished }}</th>
+                    <th class="col-1"><a href="/today/delete/{{ i.id }}">删除</a></th>
+                </tr>
+            {% endfor %}
             </tbody>
         </table>
     </div>

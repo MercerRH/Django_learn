@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from Today.models import Event
 
 
@@ -29,4 +29,10 @@ def ajax_check(request):
         event.save()
 
     return JsonResponse({})
+
+
+def delete_event(request, e_id):
+    event = Event.objects.get(id=e_id)
+    event.delete()
+    return HttpResponse(request, '删除成功')
 
