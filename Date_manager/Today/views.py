@@ -34,5 +34,5 @@ def ajax_check(request):
 def delete_event(request, e_id):
     event = Event.objects.get(id=e_id)
     event.delete()
-    return HttpResponse(request, '删除成功')
+    return JsonResponse({})
 

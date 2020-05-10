@@ -53,6 +53,19 @@
                         window.location.href = '/today/'
                     })
             })
+
+            $('#delete_event_btn').click(function () {
+                $id = $(this).attr('name')
+                $.ajax({
+                    'url': '/today/delete/' + $id,
+                    'type': 'POST',
+                    'dataType': 'json',
+                    'data': ''
+                })
+                    .done(function () {
+                        window.location.href = '/today/'
+                    })
+            })
         })
     </script>
 </head>
@@ -91,7 +104,7 @@
                     <th class="col-2">{{ i }}</th>
                     <th class="col-2">{{ i.content }}</th>
                     <th class="col-1">{{ i.is_finished }}</th>
-                    <th class="col-1"><a href="/today/delete/{{ i.id }}">删除</a></th>
+                    <th class="col-1"><button type="button" class="btn btn-danger" id="delete_event_btn" name="{{ i.id }}">删除</button></th>
                 </tr>
             {% endfor %}
             </tbody>
@@ -109,7 +122,6 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- form id="submit_all" method='post' action="/today/" -->
                     <form id="submit_all">
                         <div class="form-group">
                             <label for="input_title">标题</label>
