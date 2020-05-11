@@ -4,7 +4,8 @@
     <list default="true" id="b5beb89f-1cd7-46ef-b07d-3a499877664c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Date_manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Date_manager/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Today/today.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Today/today.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Date_manager/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Date_manager/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Today/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Today/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +103,7 @@
       <workItem from="1588991690288" duration="12582000" />
       <workItem from="1589029849488" duration="275000" />
       <workItem from="1589113967069" duration="2371000" />
-      <workItem from="1589154923174" duration="6187000" />
+      <workItem from="1589154923174" duration="12233000" />
     </task>
     <task id="LOCAL-00001" summary="增加了测试git用的文件">
       <created>1588498069772</created>
