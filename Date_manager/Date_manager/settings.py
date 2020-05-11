@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'Today'  # 注册today
+    'Today',  # 注册today
+    'Login',  # 注册login
 ]
 
 MIDDLEWARE_CLASSES = [
