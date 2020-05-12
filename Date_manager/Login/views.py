@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from Login.models import User
 
 
 # Create your views here.
@@ -10,4 +11,11 @@ def index(request):
 
 def login(request):
     """显示登录界面"""
-    return render(request, 'index/login.html')
+    if request != None:
+        u = User()
+        u.user_name = request.POST.get('username')
+        u.user_password = request.POST.get('password')
+        print(u.user_name, u.user_password)
+        return redirect("/today/")
+    else:
+        return "error"

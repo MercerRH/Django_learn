@@ -10,20 +10,44 @@
     <style>
         #content{
             width: 800px;
-            height: 400px;
+            height: 600px;
             border: 1px solid #9fcdff;
             position: fixed;
             top: 50%;
             left: 50%;
-            margin-top: -200px;
+            margin-top: -300px;
             margin-left: -400px;
-            background-color: #1c7430;
+            padding: 30px;
         }
+        form div{
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        form div button{
+            margin-top: 80px;
+        }
+        form
     </style>
 </head>
 <body>
     <div id="content">
-        content
+        <form action="/login/" method="POST">
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" class="form-control" name="username">
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+            <div class="form-group">
+                <label for="checkpwd">确认密码</label>
+                <input type="password" class="form-control" name="checkpwd">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary btn-block">提交</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>
