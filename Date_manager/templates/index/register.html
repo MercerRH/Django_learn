@@ -31,34 +31,27 @@
 
     <script>
         $(function () {
-            $('#login_btn').click(function () {
-                if ($('#input_pwd').val() != $('#check_pwd').val()){
-                    alert('两次输入的密码不一致')
+            $('#register_btn').click(function () {
+                $user_name = $('#input_username').val()
+                $password = $('#input_pwd').val()
+                $check_password = $('#check_pwd').val()
+                if ($password != $check_password){
+                    alert("两次输入的密码不一致")
                 }
                 else {
-                    $input_username = $('#input_username').val()
-                    $input_pwd = $('#input_pwd').val()
                     $.ajax({
-                        'url': '/login_check/',
+                        'url': '/register/',
                         'type': 'POST',
                         'dataType': 'json',
                         'data': {
-                            'input_username': $input_username,
-                            'input_pwd': $input_pwd,
+                            'username': $user_name,
+                            'password': $password,
                         }
                     })
-                        .done(function (data) {
-                            if (data.res == 0){
-                                alert("用户名不存在。注册一下？")
-                            }
-                            else {
-                                window.location.href = '/today/'
-                            }
+                        .done(function () {
+                            window.location.href = '/today/'
                         })
                 }
-            })
-            $('#register_btn').click(function () {
-                window.location.href = '/register/'
             })
         })
     </script>
@@ -74,8 +67,9 @@
                 <label for="password">密码</label>
                 <input type="password" class="form-control" name="password" id="input_pwd">
             </div>
-            <div>
-                <button type="button" class="btn btn-primary btn-block" id="login_btn">登录</button>
+            <div class="form-group">
+                <label>确认密码</label>
+                <input type="password" class="form-control" name="checkpwd" id="check_pwd">
             </div>
             <div>
                 <button type="button" class="btn btn-info btn-block" style="margin-top: 40px" id="register_btn">注册</button>
