@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b5beb89f-1cd7-46ef-b07d-3a499877664c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Date_manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Date_manager/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Login/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Login/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/register.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,6 +112,7 @@
       <workItem from="1589286508551" duration="2239000" />
       <workItem from="1589329156200" duration="11043000" />
       <workItem from="1589454939830" duration="72000" />
+      <workItem from="1589517816559" duration="6041000" />
     </task>
     <task id="LOCAL-00001" summary="增加了测试git用的文件">
       <created>1588498069772</created>

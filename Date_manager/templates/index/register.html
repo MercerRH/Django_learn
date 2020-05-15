@@ -48,8 +48,14 @@
                             'password': $password,
                         }
                     })
-                        .done(function () {
-                            window.location.href = '/today/'
+                        .done(function (data) {
+                            if(data.res == '1'){
+                                alert('注册成功，您的id为%s，请记住，这将是您的登录id' % data.uid)
+                                window.location.href='/today/'
+                            }
+                            else{
+                                alert('注册失败')
+                            }
                         })
                 }
             })

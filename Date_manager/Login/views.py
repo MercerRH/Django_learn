@@ -39,5 +39,12 @@ def login_check(request):
 
 def register(request):
     if request.method == 'POST':
-        return JsonResponse({})
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        u = User()
+        u.user_name = username
+        u.user_password = password
+        u.save()
+        u_id = u.id
+        return JsonResponse({'res': '1', 'uid': u_id})
     return render(request, 'index/register.html')
