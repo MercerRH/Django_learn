@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ch">
+<html lang="ch" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="UTF-8">
     <title>今日</title>
@@ -26,21 +26,27 @@
         form div button{
             margin-top: 80px;
         }
-        form
+        #check_div{
+            margin-top: 0px;
+            margin-left: 30px;
+            margin-bottom: 0px;
+        }
     </style>
 
     <script>
         $(function () {
             $('#login_btn').click(function () {
-                $input_username = $('#input_username').val()
+                $is_check = $('#is_check').prop('checked')
+                $input_userid = $('#input_userid').val()
                 $input_pwd = $('#input_pwd').val()
                 $.ajax({
                     'url': '/login_check/',
                     'type': 'POST',
                     'dataType': 'json',
                     'data': {
-                        'input_username': $input_username,
+                        'input_userid': $input_userid,
                         'input_pwd': $input_pwd,
+                        'is_check': $is_check
                     }
                 })
                     .done(function (data) {
@@ -62,9 +68,10 @@
     <div id="content">
         <form>
             <div class="form-group" style="margin-top: 0px">
-                <label>用户名</label>
-                <input type="text" class="form-control" name="username" id="input_username">
+                <label>用户id</label>
+                <input type="text" class="form-control" name="userid" id="input_userid">
             </div>
+            <div id="check_div"><input type="checkbox" class="form-check-input" id="is_check"><label for="is_check">记住用户名</label></div>
             <div>
                 <label for="password">密码</label>
                 <input type="password" class="form-control" name="password" id="input_pwd">

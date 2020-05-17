@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 from Login.models import User
+from django.db.models import Q
 import sys
+import json
 
 
 # Create your views here.
@@ -26,15 +28,17 @@ def login(request):
 def login_check(request):
     """检查登录"""
     if request.method == "POST":
-        username = request.POST.get("input_username")
+        userid = request.POST.get("input_userid")
         password = request.POST.get("input_pwd")
-        try:
-            u = User.objects.get(user_name=username)
-        except:
-            print(sys.exc_info())  # 打印异常信息
-            return JsonResponse({'res': '0'})  # 出现异常则失败返回0
+        u = User.objects.filter(Q(id__exact=userid) & Q(user_password__exact=password))  # 判断id与密码是否存在
+        if not u:
+            return JsonResponse({'res': '0'})  # 登录失败返回0
         else:
-            return JsonResponse({'res': '1'})  # 未出现异常则返回1
+            data = {'res': '1'}
+            # response = HttpResponse(json.dumps(data), content_type="application/json")
+            response = JsonResponse(data)
+            response.set_signed_cookie('user_id', userid, salt='test')  # 设置加密cookie
+            return response
 
 
 def register(request):

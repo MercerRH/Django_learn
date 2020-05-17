@@ -1,16 +1,18 @@
 from django.shortcuts import render
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse
 from Today.models import Event
+from Date_manager.login_cookie_check import is_login
 
 
 # Create your views here.
-
+@is_login
 def Today(request):
     context = {}
     context['all'] = Event.objects.all()
     return render(request, 'Today/today.html', context)
 
 
+@is_login
 def ajax_check(request):
     # 获取返回的数据
     if request.method == "POST":  # 判断是否收到POST提交
@@ -30,8 +32,8 @@ def ajax_check(request):
     return JsonResponse({})
 
 
+@is_login
 def delete_event(request, e_id):
     event = Event.objects.get(id=e_id)
     event.delete()
     return JsonResponse({})
-
