@@ -11,5 +11,5 @@ def is_login(func):
         else:
             # # 获取用户当前访问的url，并传递给/login/
             # next = request.get_full_path()
-            return redirect(reverse('Login:register'))
+            return redirect(reverse('Login:login'))
     return function

@@ -1,6 +1,6 @@
 from django.db import models
 
-
+app_name = 'Login'
 # Create your models here.
 
 class User(models.Model):
