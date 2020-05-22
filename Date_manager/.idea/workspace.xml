@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5beb89f-1cd7-46ef-b07d-3a499877664c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bug.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Date_manager/login_cookie_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/Date_manager/login_cookie_check.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Date_manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Date_manager/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Login/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Today/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Today/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/git test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Today/today.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Today/today.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +33,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../P爬虫" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -127,6 +124,8 @@
       <workItem from="1589936741029" duration="8181000" />
       <workItem from="1589974543936" duration="782000" />
       <workItem from="1589981244138" duration="22000" />
+      <workItem from="1590022626454" duration="700000" />
+      <workItem from="1590155529435" duration="680000" />
     </task>
     <task id="LOCAL-00001" summary="增加了测试git用的文件">
       <created>1588498069772</created>

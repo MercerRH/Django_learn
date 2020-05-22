@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 # from Login.models import User
 from Today.models import Event
+from Login.models import User
 from Date_manager.login_cookie_check import is_login
 
 
@@ -11,6 +12,7 @@ def Today(request):
     context = {}
     uid = request.get_signed_cookie('user_id', salt='test')
     context['all'] = Event.objects.filter(user_id=uid)
+    context['user_head'] = User.objects.filter(id=uid)[0]
     return render(request, 'Today/today.html', context)
 
 
