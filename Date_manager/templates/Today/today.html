@@ -29,6 +29,20 @@
             left: 50%;
             transform: translate(-70%, -100%);
         }
+        #user_head{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #6f42c1;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 30px;
+            position: relative;
+            left: 95%;
+            user-select: none;
+            cursor: pointer;
+        }
     </style>
 
     <script>
@@ -85,7 +99,8 @@
     <!-- 顶部菜单条 -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="navbar-brand">日程</div>
-        <div id="user_head">{{ user_head }}</div>
+        {% load user_head_filter %}
+        <div id="user_head" onclick="window.location.href='/today/my/'">{{ user_head|user_head_filter }}</div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

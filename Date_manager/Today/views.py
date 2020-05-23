@@ -12,7 +12,7 @@ def Today(request):
     context = {}
     uid = request.get_signed_cookie('user_id', salt='test')
     context['all'] = Event.objects.filter(user_id=uid)
-    context['user_head'] = User.objects.filter(id=uid)[0]
+    context['user_head'] = User.objects.get(id=uid)
     return render(request, 'Today/today.html', context)
 
 
@@ -44,3 +44,8 @@ def delete_event(request, e_id):
     event = Event.objects.get(id=e_id)
     event.delete()
     return JsonResponse({})
+
+
+@is_login
+def my(request):
+    return render(request, 'Today/my.html')

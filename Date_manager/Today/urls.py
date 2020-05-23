@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^$', views.Today, name='today'),
     url(r'^ajax_check/$', views.ajax_check),
     url(r'^delete/(\d+)$', views.delete_event),
+    url(r'^my/$', views.my),
 ]
