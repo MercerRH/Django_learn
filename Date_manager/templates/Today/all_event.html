@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="UTF-8">
+    <title>今日</title>
+    <script src="/static/js/jquery-3.0.0.min.js"></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+</head>
+<body>
+    <ul>
+        {% for i in all_event %}
+            <li>{{ i.start_time }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

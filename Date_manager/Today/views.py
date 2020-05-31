@@ -48,4 +48,18 @@ def delete_event(request, e_id):
 
 @is_login
 def my(request):
-    return render(request, 'Today/my.html')
+    u_id = request.get_signed_cookie("user_id", salt="test")
+    user_name = User.objects.get(id=u_id)
+    context = {}
+    context["user_name"] = user_name
+    return render(request, 'Today/my.html', context)
+
+
+@is_login
+def all_event(request):
+    """在所有事件界面显示每一年的列表"""
+    context = {}
+    uid = request.get_signed_cookie("user_id", salt="test")
+    all_event = Event.objects.filter(user_id=uid)
+    context['all_event'] = all_event
+    return render(request, 'Today/all_event.html', context)

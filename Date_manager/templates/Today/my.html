@@ -3,8 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>个人中心</title>
+
+    <style>
+        body{
+            overflow-y: auto;
+        }
+        .user_name_header{
+            text-align: center;
+            margin: 10px;
+            display: block;
+        }
+        .content{
+            width: 80%;
+            height: 100%;
+            background-color: gold;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+            position: relative;
+            top: 100px;
+            left: 50%;
+            margin-left: -40%;
+            font-size: 200px;
+        }
+    </style>
 </head>
 <body>
-    个人中心
+    <h1 class="user_name_header">{{ user_name }}</h1>
+    <div class="content">
+        test<br/>
+        test<br/>
+        test<br/>
+        test<br/>
+        test<br/>
+        test<br/>
+        test<br/>
+        test<br/>
+        test<br/>
+        test<br/>
+    </div>
 </body>
 </html>
